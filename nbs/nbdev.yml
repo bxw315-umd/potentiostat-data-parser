@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "potentiostat-data-parser"
+  site-url: "https://bxw315-umd.github.io/potentiostat-data-parser"
+  description: "Parse data files created by CH Instruments potentiostats and Palmsens potentiostats"
+  repo-branch: main
+  repo-url: "https://github.com/bxw315-umd/potentiostat-data-parser"
