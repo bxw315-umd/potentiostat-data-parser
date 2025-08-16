@@ -1,0 +1,49 @@
+July 19, 2022   10:35:26
+Differential Pulse Voltammetry
+File: dpv_gce_0.1m_pbbuffer_220719.bin
+Data Source:  Experiment
+Instrument Model:  CHI1040C
+Header: 
+Note: 
+
+Init E (V) = 0.4
+Final E (V) = 1.4
+Incr E (V) = 0.004
+Amplitude (V) = 0.05
+Pulse Width (sec) = 0.06
+Sample Width (sec) = 0.03
+Pulse Period (sec) = 0.5
+Quiet Time (sec) = 2
+Sensitivity (A/V) = 1e-5
+
+Ep = 0.584V
+ip = -1.618e-7A
+Ap = -1.423e-8VA
+
+Potential/V	Current/A	Time/s
+
+0.440	-5.844e-7
+0.480	-6.668e-7
+0.520	-8.177e-7
+0.560	-1.002e-6
+0.600	-1.023e-6
+0.640	-9.839e-7
+0.680	-1.020e-6
+0.720	-1.099e-6
+0.760	-1.200e-6
+0.800	-1.320e-6
+0.840	-1.465e-6
+0.880	-1.638e-6
+0.920	-1.833e-6
+0.960	-2.054e-6
+1.000	-2.309e-6
+1.040	-2.601e-6
+1.080	-2.919e-6
+1.120	-3.252e-6
+1.160	-3.608e-6
+1.200	-4.000e-6
+1.240	-4.455e-6
+1.280	-5.040e-6
+1.320	-5.845e-6
+1.360	-6.902e-6
+1.400	-8.161e-6
