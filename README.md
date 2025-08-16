@@ -74,25 +74,6 @@ print(contents)
     0.560   -1.002e-6
     0.600   -1.023e-6
     0.640   -9.839e-7
-    0.680   -1.020e-6
-    0.720   -1.099e-6
-    0.760   -1.200e-6
-    0.800   -1.320e-6
-    0.840   -1.465e-6
-    0.880   -1.638e-6
-    0.920   -1.833e-6
-    0.960   -2.054e-6
-    1.000   -2.309e-6
-    1.040   -2.601e-6
-    1.080   -2.919e-6
-    1.120   -3.252e-6
-    1.160   -3.608e-6
-    1.200   -4.000e-6
-    1.240   -4.455e-6
-    1.280   -5.040e-6
-    1.320   -5.845e-6
-    1.360   -6.902e-6
-    1.400   -8.161e-6
 
 ``` python
 parse_chi_file(contents)
@@ -111,11 +92,56 @@ parse_chi_file(contents)
       'Pulse Period (sec)': 0.5,
       'Quiet Time (sec)': 2.0,
       'Sensitivity (A/V)': 1e-05},
-     'numeric_data': {'Potential/V': array([0.44, 0.48, 0.52, 0.56, 0.6 , 0.64, 0.68, 0.72, 0.76, 0.8 , 0.84,
-             0.88, 0.92, 0.96, 1.  , 1.04, 1.08, 1.12, 1.16, 1.2 , 1.24, 1.28,
-             1.32, 1.36, 1.4 ]),
+     'numeric_data': {'Potential/V': array([0.44, 0.48, 0.52, 0.56, 0.6 , 0.64]),
       'Current/A': array([-5.844e-07, -6.668e-07, -8.177e-07, -1.002e-06, -1.023e-06,
-             -9.839e-07, -1.020e-06, -1.099e-06, -1.200e-06, -1.320e-06,
-             -1.465e-06, -1.638e-06, -1.833e-06, -2.054e-06, -2.309e-06,
-             -2.601e-06, -2.919e-06, -3.252e-06, -3.608e-06, -4.000e-06,
-             -4.455e-06, -5.040e-06, -5.845e-06, -6.902e-06, -8.161e-06])}}
+             -9.839e-07])}}
+
+### Palmsens example
+
+``` python
+print(contents)
+```
+
+    Date and time:,2025-03-29 23:18:59
+    Notes:
+    ,,,,,,,,,,,,
+    Differential Pulse Voltammetry [1]: S49,,Differential Pulse Voltammetry [8]: S48,,Differential Pulse Voltammetry [15]: S47,,Differential Pulse Voltammetry [22]: S46,,Differential Pulse Voltammetry [29]: S45,,Differential Pulse Voltammetry [36]: S44,,Differential Pulse Voltammetry [43]: S43
+    Date and time measurement:,2025-03-29 13:32:13,Date and time measurement:,2025-03-29 14:28:03,Date and time measurement:,2025-03-29 16:28:02,Date and time measurement:,2025-03-29 17:28:20,Date and time measurement:,2025-03-29 19:41:19,Date and time measurement:,2025-03-29 20:35:10,Date and time measurement:,2025-03-29 21:22:52,
+    V,µA,V,µA,V,µA,V,µA,V,µA,V,µA,V,µA
+    0,0.019751112,0,0.040179824,0,0.045964596,0,0.04073982,0,0.044447004,0,0.043287808,0,0.05077498
+    0.01020757,0.019157514,0.01020757,0.039586228,0.01020757,0.0450126,0.01020757,0.039709428,0.01020757,0.042632616,0.01020757,0.041630216,0.01020757,0.050198176
+    0.02041514,0.018810318,0.02041514,0.038824632,0.02041514,0.044525404,0.02041514,0.039082228,0.02041514,0.04155182,0.02041514,0.040493424,0.02041514,0.047666992
+    0.03062271,0.01848552,0.03062271,0.038460632,0.03062271,0.044407804,0.03062271,0.038936632,0.03062271,0.04089662,0.03062271,0.039731828,0.03062271,0.045947796
+
+``` python
+parse_palmsens_file(contents)
+```
+
+    [{'name': 'Differential Pulse Voltammetry [1]: S49',
+      'timestamp': '2025-03-29T13:32:13',
+      'potential': array([0.        , 0.01020757, 0.02041514]),
+      'current': array([1.9751112e-08, 1.9157514e-08, 1.8810318e-08])},
+     {'name': 'Differential Pulse Voltammetry [8]: S48',
+      'timestamp': '2025-03-29T14:28:03',
+      'potential': array([0.        , 0.01020757, 0.02041514]),
+      'current': array([4.0179824e-08, 3.9586228e-08, 3.8824632e-08])},
+     {'name': 'Differential Pulse Voltammetry [15]: S47',
+      'timestamp': '2025-03-29T16:28:02',
+      'potential': array([0.        , 0.01020757, 0.02041514]),
+      'current': array([4.5964596e-08, 4.5012600e-08, 4.4525404e-08])},
+     {'name': 'Differential Pulse Voltammetry [22]: S46',
+      'timestamp': '2025-03-29T17:28:20',
+      'potential': array([0.        , 0.01020757, 0.02041514]),
+      'current': array([4.0739820e-08, 3.9709428e-08, 3.9082228e-08])},
+     {'name': 'Differential Pulse Voltammetry [29]: S45',
+      'timestamp': '2025-03-29T19:41:19',
+      'potential': array([0.        , 0.01020757, 0.02041514]),
+      'current': array([4.4447004e-08, 4.2632616e-08, 4.1551820e-08])},
+     {'name': 'Differential Pulse Voltammetry [36]: S44',
+      'timestamp': '2025-03-29T20:35:10',
+      'potential': array([0.        , 0.01020757, 0.02041514]),
+      'current': array([4.3287808e-08, 4.1630216e-08, 4.0493424e-08])},
+     {'name': 'Differential Pulse Voltammetry [43]: S43',
+      'timestamp': '2025-03-29T21:22:52',
+      'potential': array([0.        , 0.01020757, 0.02041514]),
+      'current': array([5.0774980e-08, 5.0198176e-08, 4.7666992e-08])}]
