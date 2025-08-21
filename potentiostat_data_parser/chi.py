@@ -8,6 +8,7 @@ __all__ = ['parse_colon', 'parse_datetime', 'parse_line', 'parse_equals', 'parse
            'find_start_of_numeric_data', 'parse_chi_file']
 
 # %% ../nbs/00_chi.ipynb 14
+from dateutil import parser as date_parser
 from datetime import datetime
 
 def parse_datetime(
@@ -18,20 +19,10 @@ def parse_datetime(
     If parsing fails, this function returns `None`.
     """
     
-    # try multiple date formats, because CHI has a nonstandard way of displaying the month. It'd be better to directly obtain the exact strings for each month, but this works for now 
-    date_formats = [
-        "%B %d, %Y %H:%M:%S",      # "July 8, 2025 15:52:52"
-        "%b. %d, %Y %H:%M:%S",     # "Sept. 29, 2022 16:23:14"
-        "%b %d, %Y %H:%M:%S",      # "Sep 29, 2022 16:23:14"
-    ]
-
-    timestamp = None
-    for date_format in date_formats:
-        try:
-            timestamp = datetime.strptime(chi_timestamp, date_format)
-            break
-        except ValueError:
-            continue
+    try:
+        timestamp = date_parser.parse(chi_timestamp)
+    except ValueError:
+        timestamp = None
 
     return timestamp
 
